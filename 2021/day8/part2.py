@@ -43,11 +43,7 @@ for signals, output in inputdata:
             break
 
     # now that a valid mapping has been found, build the number from the output
-    nums = []
-    for num in output:
-        decoded = signal_map[''.join(sort_against_map(valid_map, num))]
-        nums.append(decoded)
-
+    nums = [signal_map[''.join(sort_against_map(valid_map, num))] for num in output]
     total += int(''.join(nums))
 
 print(total)
