@@ -9,7 +9,7 @@ def surrounding(grid, p):
     points = []
     # previous row
     if p.y > 0:
-        points.extend([point(i, p.y - 1) for i in range(max(p.x - 1, 0), min(p.x + 2, len(grid[p.y - 1])))])
+        points.extend([point(i, p.y-1) for i in range(max(p.x-1, 0), min(p.x+2, len(grid[p.y-1])))])
     # same row
     if p.x > 0:
         points.append(point(p.x-1, p.y))
@@ -17,7 +17,7 @@ def surrounding(grid, p):
         points.append(point(p.x+1, p.y))
     # next row
     if p.y < len(grid) - 1:
-        points.extend([point(i, p.y+1) for i in range(max(p.x - 1, 0), min(p.x + 2, len(grid[p.y+1])))])
+        points.extend([point(i, p.y+1) for i in range(max(p.x-1, 0), min(p.x+2, len(grid[p.y+1])))])
 
     return points
 
